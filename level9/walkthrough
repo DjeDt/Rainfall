@@ -1,0 +1,5 @@
+RIP OVERFLOW
+
+tools env.c
+ABS -> (8 + SHELLCODE)
+padding 108

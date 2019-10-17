@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <stdbool.h>
+
+struct auth
+{
+	char	name[32];
+	int		auth;
+};
+
+char		*service;	// 0x8049ab0
+struct auth	*auth;		// 0x8049aac
+
+
+int main(int ac, char **av)
+{
+	char input[0x80];
+
+	while (1)
+	{
+		printf("%p, %p \n", auth, service);
+		if (fgets(input, 0x80, (FILE*)stdin) == NULL)
+			break ;
+
+		if (strncmp(input, "auth ", 0x5) == 0)
+		{
+			auth = malloc(0x4);
+			memset(auth, 0, 0x4);
+			if (strlen(input + 5) < 30)
+				strcpy(auth->name, line + 5);
+		}
+		else if (strncmp(input, "reset", 0x5) == 0)
+			free(auth);
+		else if (strncmp(input, "service", 0x6) == 0)
+			service = strdup(line + 0x6);
+		else if (strncmp(line, "login", 0x5) == 0)
+		{
+            if (&authParam + 32 == 0)
+                fwrite("Password:\n", 1, 10, stdout);
+            else
+				system("/bin/sh");
+		}
+	}
+	return (0);
+}

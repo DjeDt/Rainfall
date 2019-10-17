@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+void p(void)
+{
+	int		i;
+	char	buf[76];
+
+	fflush((FILE*)stdout);
+	gets(buf);
+	if (i & 0xb0000000 == 0xb0000000)
+	{
+		printf("(%p)\n", buf);
+		exit(1);
+	}
+	puts(buf);
+	strdup(buf);
+}
+
+int main(void)
+{
+	p();
+	return (0);
+}

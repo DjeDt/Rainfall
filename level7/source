@@ -1,0 +1,33 @@
+struct structure
+{
+	int index;
+	char *str;
+};
+
+char c[68];
+
+void m(void)
+{
+	printf("%s - %d\n", c, time(NULL));
+}
+
+int main(void)
+{
+	struct structure *s1;
+	struct structure *s2;
+
+	s1 = malloc(8);
+	s1->index = 1;
+	s1->str = malloc(8);
+
+	s2 = malloc(8);
+	s2->index = 2;
+	s2->str = malloc(8);
+
+	strcpy(s1->str, av[1]);
+	strcpy(s2->str, av[2]);
+
+	fgets(c, 68, fopen("r", "/home/user/level8/.pass");
+
+	puts("~~");
+}

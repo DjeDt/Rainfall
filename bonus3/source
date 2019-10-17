@@ -1,0 +1,24 @@
+#include <stdlib.h>
+int main(int ac, char **av)
+{
+	char buf[132] = {0};
+	int fd;
+
+	if (fd = (fopen("/home/user/end/.pass", "r")) == 0)
+		return -1;
+	if (ac != 2)
+		return -1;
+
+	fread(buf, 1, 66, fd);
+
+	buf[atoi(av[1])] = 0;
+
+	fread(buf + 66, 1, 65, fd);
+
+	fclose(fd);
+
+	if (strcmp(buf, av[1]) != 0)
+		puts(buf + 66);
+
+	exec("/bin/sh", "sh", NULL);
+}

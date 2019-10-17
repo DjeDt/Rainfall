@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <strings.h>
+
+void p(char *s1, char *s2)
+{
+	char *ptr;
+	char buf[4096];
+
+	puts(s2);
+	read(0, buf, 4096);
+	ptr = strchr(buf, '\n');
+	*ptr = 0;
+	strncpy(s1, buf, 20);
+}
+
+void pp(char *buf)
+{
+	char buf2[20];
+	char buf3[20];
+
+	p(buf2, " - ");
+	p(buf3, " - ");
+	strcpy(buf, buf2);
+	while (*ptr != '\0')
+		ptr++;
+	ptr--;
+	*ptr = ' ';
+	strcat(buf, buf3);
+}
+
+int main(void)
+{
+	char buf[42];
+	pp(buf);
+	return (0);
+}
